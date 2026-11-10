@@ -4,8 +4,7 @@
  */
 
 const examManifest = [
-    'exam-1.json',
-    'exam-2.json'
+    'exam-2.json',
 ];
 
 class IELTSExamRunner {
@@ -18,6 +17,7 @@ class IELTSExamRunner {
         this.timerInterval = null;
         this.timeLeftSeconds = 0;
         this.chartInstance = null;
+        this.currentPassageIndex = 0; // Active passage tab for reading
 
         this.initDOM();
     }
@@ -117,7 +117,7 @@ class IELTSExamRunner {
 
         // Header updates
         document.getElementById('section-title-badge').innerText = this.formatSectionTitle(sectionKey);
-        
+
         // Hide all template panels
         document.getElementById('panel-listening').classList.add('hidden');
         document.getElementById('panel-reading').classList.add('hidden');
@@ -134,6 +134,7 @@ class IELTSExamRunner {
         if (sectionKey === 'listening') {
             this.renderListening(sectionData);
         } else if (sectionKey === 'reading') {
+            this.currentPassageIndex = 0; // Reset to passage 1
             this.renderReading(sectionData);
         } else if (sectionKey === 'writingTask1') {
             this.renderWritingTask1(sectionData);
@@ -188,15 +189,17 @@ class IELTSExamRunner {
         const container = document.getElementById('listening-questions-container');
         container.innerHTML = '';
 
-        data.questions.forEach((q, idx) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = "bg-slate-900/60 p-4 rounded-xl border border-slate-700 space-y-2";
-            wrapper.innerHTML = `
-                <label class="block text-sm font-semibold text-slate-200">${q.prompt}</label>
-                <input type="text" data-q-id="${q.id}" class="listening-input w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
-            `;
-            container.appendChild(wrapper);
-        });
+        if (data.questions) {
+            data.questions.forEach((q) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = "bg-slate-900/60 p-4 rounded-xl border border-slate-700 space-y-2";
+                wrapper.innerHTML = `
+                    <label class="block text-sm font-semibold text-slate-200">${q.prompt}</label>
+                    <input type="text" data-q-id="${q.id}" class="listening-input w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                `;
+                container.appendChild(wrapper);
+            });
+        }
     }
 
     renderReading(data) {
@@ -204,20 +207,106 @@ class IELTSExamRunner {
         panel.classList.remove('hidden');
 
         document.getElementById('reading-instructions').innerText = data.instructions || '';
-        document.getElementById('reading-passage-title').innerText = data.passageTitle || '';
-        document.getElementById('reading-passage-content').innerText = data.passageContent || '';
 
-        const container = document.getElementById('reading-questions-container');
-        container.innerHTML = '';
+        const passages = data.passages || [];
+        const tabsContainer = document.getElementById('passage-tabs');
+        tabsContainer.innerHTML = '';
 
-        data.questions.forEach((q) => {
+        if (passages.length === 0) return;
+
+        // Render passage selector tabs
+        passages.forEach((p, idx) => {
+            const btn = document.createElement('button');
+            const isActive = idx === this.currentPassageIndex;
+            btn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition ${
+                isActive
+                    ? 'bg-blue-600 text-white shadow'
+                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+            }`;
+            btn.innerText = `Passage ${p.passageNumber || idx + 1}`;
+            btn.addEventListener('click', () => {
+                this.saveReadingAnswersCurrentView();
+                this.currentPassageIndex = idx;
+                this.renderReading(data);
+            });
+            tabsContainer.appendChild(btn);
+        });
+
+        // Render active passage content & questions
+        const activePassage = passages[this.currentPassageIndex] || passages[0];
+        document.getElementById('reading-passage-title').innerText = activePassage.title || '';
+        document.getElementById('reading-passage-content').innerText = activePassage.content || '';
+
+        const qContainer = document.getElementById('reading-questions-container');
+        qContainer.innerHTML = '';
+
+        const activeQuestions = activePassage.questions || [];
+        activeQuestions.forEach((q) => {
             const wrapper = document.createElement('div');
             wrapper.className = "bg-slate-900/60 p-4 rounded-xl border border-slate-700 space-y-2";
+
+            let inputHtml = '';
+            const existingVal = this.studentAnswers.reading.answers[q.id] || '';
+
+            if (q.options && q.options.length > 0) {
+              // Render stacked options vertically for long text
+              inputHtml = `<div class="space-y-2 pt-1">`;
+              q.options.forEach((opt) => {
+                const isSelected = existingVal === opt;
+                inputHtml += `
+                              <label class="flex items-start space-x-3 bg-slate-950 border ${isSelected ? "border-blue-500 bg-blue-950/40" : "border-slate-700"} px-3.5 py-2.5 rounded-lg cursor-pointer hover:border-slate-500 transition w-full">
+                              <input type="radio" name="q_${q.id}" value="${opt}" ${isSelected ? "checked" : ""} data-q-id="${q.id}" class="reading-input text-blue-600 focus:ring-blue-500 mt-0.5 flex-shrink-0">
+                              <span class="text-xs font-medium text-slate-200 leading-relaxed">${opt}</span>
+                        </label>
+                    `;
+              });
+              inputHtml += `</div>`;
+              // }
+              // if (q.options && q.options.length > 0) {
+              //     // Render option buttons or radio choices
+              //     inputHtml = `<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">`;
+              //     q.options.forEach(opt => {
+              //         const isSelected = existingVal === opt;
+              //         inputHtml += `
+              //             <label class="flex items-center space-x-2 bg-slate-950 border ${isSelected ? 'border-blue-500 bg-blue-950/40' : 'border-slate-700'} px-3 py-2 rounded-lg cursor-pointer hover:border-slate-500 transition">
+              //                 <input type="radio" name="q_${q.id}" value="${opt}" ${isSelected ? 'checked' : ''} data-q-id="${q.id}" class="reading-input text-blue-600 focus:ring-blue-500">
+              //                 <span class="text-xs font-medium text-slate-200">${opt}</span>
+              //             </label>
+              //         `;
+              //     });
+              //     inputHtml += `</div>`;
+            } else {
+                // Render text input for short answer / completion
+                inputHtml = `
+                    <input type="text" data-q-id="${q.id}" value="${existingVal}" class="reading-input w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                `;
+            }
+
             wrapper.innerHTML = `
                 <label class="block text-sm font-semibold text-slate-200">${q.prompt}</label>
-                <input type="text" data-q-id="${q.id}" class="reading-input w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                ${inputHtml}
             `;
-            container.appendChild(wrapper);
+            qContainer.appendChild(wrapper);
+        });
+    }
+
+    saveReadingAnswersCurrentView() {
+        // Collect text inputs
+        const textInputs = document.querySelectorAll('#reading-questions-container input[type="text"].reading-input');
+        textInputs.forEach(inp => {
+            const qId = inp.getAttribute('data-q-id');
+            if (qId) {
+                this.studentAnswers.reading.answers[qId] = inp.value.trim();
+            }
+        });
+
+        // Collect checked radios
+        const checkedRadios = document.querySelectorAll('#reading-questions-container input[type="radio"].reading-input:checked');
+        checkedRadios.forEach(rad => {
+            const qId = rad.getAttribute('data-q-id');
+            if (qId) {
+                this.studentAnswers.reading.answers[qId] = rad.value.trim();
+            }
         });
     }
 
@@ -228,7 +317,7 @@ class IELTSExamRunner {
         document.getElementById('w1-instructions').innerText = data.instructions || '';
         document.getElementById('w1-prompt-title').innerText = data.promptTitle || '';
         document.getElementById('w1-prompt-desc').innerText = data.promptDesc || '';
-        document.getElementById('w1-essay-input').value = '';
+        document.getElementById('w1-essay-input').value = this.studentAnswers.writingTask1.answers['essay'] || '';
 
         // Render Chart.js if data exists
         if (data.chartType && data.labels && data.datasets) {
@@ -262,7 +351,7 @@ class IELTSExamRunner {
 
         document.getElementById('w2-instructions').innerText = data.instructions || '';
         document.getElementById('w2-prompt').innerText = data.prompt || '';
-        document.getElementById('w2-essay-input').value = '';
+        document.getElementById('w2-essay-input').value = this.studentAnswers.writingTask2.answers['essay'] || '';
     }
 
     confirmNextSection() {
@@ -283,11 +372,7 @@ class IELTSExamRunner {
                 this.studentAnswers.listening.answers[qId] = inp.value.trim();
             });
         } else if (sectionKey === 'reading') {
-            const inputs = document.querySelectorAll('.reading-input');
-            inputs.forEach(inp => {
-                const qId = inp.getAttribute('data-q-id');
-                this.studentAnswers.reading.answers[qId] = inp.value.trim();
-            });
+            this.saveReadingAnswersCurrentView();
         } else if (sectionKey === 'writingTask1') {
             const text = document.getElementById('w1-essay-input').value.trim();
             this.studentAnswers.writingTask1.answers['essay'] = text;
@@ -300,7 +385,7 @@ class IELTSExamRunner {
     advanceToNextSection() {
         this.saveCurrentSectionAnswers();
         if (this.timerInterval) clearInterval(this.timerInterval);
-        
+
         this.currentSectionIndex++;
         this.renderCurrentSection();
     }
@@ -335,7 +420,7 @@ ${jsonStr}`);
         const mailtoUrl = `mailto:noahthonymhn@gmail.com?subject=${subject}&body=${body}`;
 
         document.getElementById('btn-email-teacher').href = mailtoUrl;
-        
+
         // Store payload reference for direct download button
         this.finalJsonPayload = jsonStr;
     }

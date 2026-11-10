@@ -1,0 +1,462 @@
+{
+  "examId": "exam-1",
+  "title": "IELTS Academic Practice Test 1",
+  "listening": {
+    "enabled": false,
+    "durationMinutes": 30,
+    "reviewMinutes": 2,
+    "instructions": "",
+    "parts": []
+  },
+  "reading": {
+    "enabled": true,
+    "durationMinutes": 60,
+    "instructions": "You should spend 20 minutes on each passage. Answer all 40 questions.",
+    "passages": [
+      {
+        "passageNumber": 1,
+        "title": "The Archaeology of Ancient Human Remains: Unearthing Our Ancestors",
+        "content": "Paragraph A\nArchaeology provides a tangible link to the distant past, allowing researchers to reconstruct the lives, cultures, and biological profiles of ancient human populations through the recovery of skeletal remains. Excavation sites yield invaluable bioarchaeological data that transcend written histories, shedding light on dietary habits, pathological conditions, and migratory patterns.\n\nParagraph B\nOne of the most significant breakthroughs in modern bioarchaeology is the extraction and sequencing of ancient DNA (aDNA). Unlike morphological analysis, which relies solely on physical measurements of bones and teeth, aDNA analysis enables scientists to trace deep phylogenetic lineages, population admixtures, and evolutionary adaptations to environmental stressors such as high altitudes or epidemic diseases.\n\nParagraph C\nHowever, the study of ancient human remains is fraught with ethical complexities and preservation challenges. Bone degradation caused by acidic soils, microbial activity, and temperature fluctuations can severely compromise genetic integrity. Furthermore, ethical protocols regarding the respectful handling, repatriation, and display of indigenous remains require rigorous international standards and collaboration with descendant communities.",
+        "questions": [
+          {
+            "id": "r_q1",
+            "type": "true-false-notgiven",
+            "prompt": "1. Archaeological excavation sites provide bioarchaeological data that can replace written historical records.",
+            "options": [
+              "TRUE",
+              "FALSE",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q2",
+            "type": "true-false-notgiven",
+            "prompt": "2. Morphological analysis of bones and teeth allows scientists to trace deep phylogenetic lineages.",
+            "options": [
+              "TRUE",
+              "FALSE",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q3",
+            "type": "true-false-notgiven",
+            "prompt": "3. Ancient DNA extraction is immune to environmental degradation caused by temperature fluctuations.",
+            "options": [
+              "TRUE",
+              "FALSE",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q4",
+            "type": "true-false-notgiven",
+            "prompt": "4. Evolutionary adaptations to high altitudes can be identified through aDNA analysis.",
+            "options": [
+              "TRUE",
+              "FALSE",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q5",
+            "type": "true-false-notgiven",
+            "prompt": "5. International standards for the repatriation of indigenous remains are universally agreed upon today.",
+            "options": [
+              "TRUE",
+              "FALSE",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q6",
+            "type": "multiple-choice",
+            "prompt": "6. What is the primary advantage of ancient DNA (aDNA) analysis over morphological analysis?",
+            "options": [
+              "A) It requires smaller excavation sites.",
+              "B) It traces evolutionary adaptations and population admixtures.",
+              "C) It completely eliminates the risk of bone degradation.",
+              "D) It relies exclusively on physical bone measurements."
+            ]
+          },
+          {
+            "id": "r_q7",
+            "type": "multiple-choice",
+            "prompt": "7. According to paragraph C, what factor compromises the genetic integrity of skeletal remains?",
+            "options": [
+              "A) Acidic soils and microbial activity",
+              "B) Excessive handling by descendant communities",
+              "C) Advanced morphological examination",
+              "D) Written historical inaccuracies"
+            ]
+          },
+          {
+            "id": "r_q8",
+            "type": "multiple-choice",
+            "prompt": "8. What role do descendant communities play in bioarchaeological research according to the text?",
+            "options": [
+              "A) They fund excavation projects.",
+              "B) They collaborate on ethical protocols for handling remains.",
+              "C) They perform laboratory DNA sequencing.",
+              "D) They write historical excavation reports."
+            ]
+          },
+          {
+            "id": "r_q9",
+            "type": "multiple-choice",
+            "prompt": "9. Which of the following is NOT mentioned as a source of bioarchaeological data?",
+            "options": [
+              "A) Dietary habits",
+              "B) Pathological conditions",
+              "C) Architectural layouts",
+              "D) Migratory patterns"
+            ]
+          },
+          {
+            "id": "r_q10",
+            "type": "multiple-choice",
+            "prompt": "10. What does the term 'bioarchaeological data' refer to in the context of paragraph A?",
+            "options": [
+              "A) Information retrieved from skeletal remains",
+              "B) Modern medical records",
+              "C) Digital reconstructions of ancient buildings",
+              "D) Linguistic evolution models"
+            ]
+          },
+          {
+            "id": "r_q11",
+            "type": "short-answer",
+            "prompt": "11. What specific physical structures are measured during morphological analysis of ancient humans?"
+          },
+          {
+            "id": "r_q12",
+            "type": "short-answer",
+            "prompt": "12. Name one environmental stressor mentioned in the text that ancient populations adapted to."
+          },
+          {
+            "id": "r_q13",
+            "type": "short-answer",
+            "prompt": "13. What type of activity causes bone degradation alongside acidic soils and temperature fluctuations?"
+          }
+        ]
+      },
+      {
+        "passageNumber": 2,
+        "title": "The History and Evolution of Printing: From Movable Type to Digital Press",
+        "content": "Paragraph A\nThe invention of the printing press stands as one of the most transformative milestones in human civilization. Before Johannes Gutenberg's mid-15th-century innovation in Mainz, Germany, books were painstakingly copied by hand, rendering them scarce luxury items accessible only to the elite clergy and aristocracy.\n\nParagraph B\nGutenberg's key contribution was not the printing press itself—which was adapted from wine presses—but rather the development of durable movable metallic type made from an alloy of lead, tin, and antimony. Combined with an oil-based ink that adhered uniformly to metal type, this system enabled the mass production of texts with unprecedented speed and precision.\n\nParagraph C\nThe rapid dissemination of printed works catalyzed the European Renaissance, the Scientific Revolution, and the Protestant Reformation. By lowering the cost of book production and standardizing vernacular languages, the printing press democratized knowledge, empowered literacy movements, and fundamentally altered global communication channels.",
+        "questions": [
+          {
+            "id": "r_q14",
+            "type": "matching-headings",
+            "prompt": "14. Paragraph A",
+            "options": [
+              "i. The transformation of communication channels through print",
+              "ii. The scarcity of hand-copied texts prior to the 15th century",
+              "iii. The development of durable metallic alloy type",
+              "iv. Environmental challenges in preserving ancient artifacts",
+              "v. The integration of artificial intelligence in healthcare",
+              "vi. The economic factors of book production",
+              "vii. The biographical background of Johannes Gutenberg"
+            ]
+          },
+          {
+            "id": "r_q15",
+            "type": "matching-headings",
+            "prompt": "15. Paragraph B",
+            "options": [
+              "i. The transformation of communication channels through print",
+              "ii. The scarcity of hand-copied texts prior to the 15th century",
+              "iii. The development of durable metallic alloy type",
+              "iv. Environmental challenges in preserving ancient artifacts",
+              "v. The integration of artificial intelligence in healthcare",
+              "vi. The economic factors of book production",
+              "vii. The biographical background of Johannes Gutenberg"
+            ]
+          },
+          {
+            "id": "r_q16",
+            "type": "matching-headings",
+            "prompt": "16. Paragraph C",
+            "options": [
+              "i. The transformation of communication channels through print",
+              "ii. The scarcity of hand-copied texts prior to the 15th century",
+              "iii. The development of durable metallic alloy type",
+              "iv. Environmental challenges in preserving ancient artifacts",
+              "v. The integration of artificial intelligence in healthcare",
+              "vi. The economic factors of book production",
+              "vii. The biographical background of Johannes Gutenberg"
+            ]
+          },
+          {
+            "id": "r_q17",
+            "type": "multiple-choice",
+            "prompt": "17. What city was the birthplace of Gutenberg's mid-15th-century innovation?",
+            "options": [
+              "A) Berlin",
+              "B) Mainz",
+              "C) Frankfurt",
+              "D) Munich"
+            ]
+          },
+          {
+            "id": "r_q18",
+            "type": "multiple-choice",
+            "prompt": "18. What was Gutenberg's press originally adapted from?",
+            "options": [
+              "A) Textile weaving looms",
+              "B) Wine presses",
+              "C) Metal smithing hammers",
+              "D) Paper rolling machines"
+            ]
+          },
+          {
+            "id": "r_q19",
+            "type": "multiple-choice",
+            "prompt": "19. Which metals were combined to create the movable metallic type alloy?",
+            "options": [
+              "A) Copper, iron, and zinc",
+              "B) Lead, tin, and antimony",
+              "C) Gold, silver, and platinum",
+              "D) Nickel, chrome, and steel"
+            ]
+          },
+          {
+            "id": "r_q20",
+            "type": "sentence-completion",
+            "prompt": "20. Before the 15th century, books were copied by ____________, making them extremely scarce."
+          },
+          {
+            "id": "r_q21",
+            "type": "sentence-completion",
+            "prompt": "21. Gutenberg adapted his printing press design from traditional ____________ presses."
+          },
+          {
+            "id": "r_q22",
+            "type": "sentence-completion",
+            "prompt": "22. Movable metallic type was crafted from an alloy of lead, tin, and ____________."
+          },
+          {
+            "id": "r_q23",
+            "type": "sentence-completion",
+            "prompt": "23. The mass production of texts achieved unprecedented speed and ____________."
+          },
+          {
+            "id": "r_q24",
+            "type": "sentence-completion",
+            "prompt": "24. Printed works catalyzed major historical movements including the Scientific Revolution and the ____________ Reformation."
+          },
+          {
+            "id": "r_q25",
+            "type": "sentence-completion",
+            "prompt": "25. By lowering production costs, printing helped to ____________ knowledge."
+          },
+          {
+            "id": "r_q26",
+            "type": "sentence-completion",
+            "prompt": "26. Standardizing vernacular languages empowered widespread ____________ movements."
+          }
+        ]
+      },
+      {
+        "passageNumber": 3,
+        "title": "Artificial Intelligence in Healthcare: Promises and Pitfalls",
+        "content": "Paragraph A\nArtificial intelligence (AI) has rapidly transitioned from theoretical computer science to clinical implementation, offering groundbreaking potential in diagnostics, personalized medicine, and hospital workflow optimization. Machine learning algorithms, particularly deep neural networks, can process complex biomedical datasets with speed and precision that rival human specialists.\n\nParagraph B\nIn diagnostic radiology and oncology, AI systems trained on millions of annotated medical images demonstrate remarkable efficacy in detecting early-stage malignancies in mammograms and identifying subtle micro-fractures in radiographs. These capabilities reduce diagnostic error rates and facilitate prompt clinical intervention, directly improving patient prognosis.\n\nParagraph C\nDespite these advancements, integrating AI into healthcare introduces significant ethical and operational hurdles. Algorithmic bias resulting from unrepresentative training data can exacerbate healthcare inequalities for minority populations. Additionally, the 'black-box' nature of complex neural networks complicates clinical accountability when automated decisions lead to adverse patient outcomes.",
+        "questions": [
+          {
+            "id": "r_q27",
+            "type": "multiple-choice",
+            "prompt": "27. What is the primary function of machine learning algorithms in modern healthcare as described in paragraph A?",
+            "options": [
+              "A) Replacing hospital administrative staff entirely",
+              "B) Processing complex biomedical datasets rapidly",
+              "C) Eliminating the need for clinical trials",
+              "D) Manufacturing pharmaceutical drugs"
+            ]
+          },
+          {
+            "id": "r_q28",
+            "type": "multiple-choice",
+            "prompt": "28. In which medical fields are AI systems noted for detecting early-stage malignancies?",
+            "options": [
+              "A) Pediatrics and dermatology",
+              "B) Radiology and oncology",
+              "C) Cardiology and orthopedics",
+              "D) Psychiatry and neurology"
+            ]
+          },
+          {
+            "id": "r_q29",
+            "type": "multiple-choice",
+            "prompt": "29. What specific medical imagery is mentioned regarding micro-fracture detection?",
+            "options": [
+              "A) Radiographs",
+              "B) Mammograms",
+              "C) MRIs",
+              "D) Ultrasounds"
+            ]
+          },
+          {
+            "id": "r_q30",
+            "type": "multiple-choice",
+            "prompt": "30. What causes algorithmic bias in healthcare AI systems according to paragraph C?",
+            "options": [
+              "A) Unrepresentative training data",
+              "B) Excessive speed of neural networks",
+              "C) Outdated computer hardware",
+              "D) Lack of physician oversight"
+            ]
+          },
+          {
+            "id": "r_q31",
+            "type": "multiple-choice",
+            "prompt": "31. What does the term 'black-box' refer to in the context of complex neural networks?",
+            "options": [
+              "A) The physical housing of hospital servers",
+              "B) The opacity of decision-making processes",
+              "C) A secure database for patient records",
+              "D) Encrypted medical imaging files"
+            ]
+          },
+          {
+            "id": "r_q32",
+            "type": "multiple-choice",
+            "prompt": "32. What operational challenge arises when automated AI decisions lead to adverse patient outcomes?",
+            "options": [
+              "A) Clinical accountability complications",
+              "B) Immediate bankruptcy of medical facilities",
+              "C) Mandatory software deletion",
+              "D) Complete loss of electrical power"
+            ]
+          },
+          {
+            "id": "r_q33",
+            "type": "multiple-choice",
+            "prompt": "33. How do AI systems compare to human specialists in handling biomedical datasets?",
+            "options": [
+              "A) They are significantly slower and less accurate.",
+              "B) They rival human specialists in speed and precision.",
+              "C) They operate without any data input.",
+              "D) They function exclusively offline."
+            ]
+          },
+          {
+            "id": "r_q34",
+            "type": "yes-no-notgiven",
+            "prompt": "34. Artificial intelligence has remained strictly within theoretical computer science.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q35",
+            "type": "yes-no-notgiven",
+            "prompt": "35. Deep neural networks are capable of analyzing complex biomedical data.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q36",
+            "type": "yes-no-notgiven",
+            "prompt": "36. AI tools successfully eliminate all diagnostic error rates in hospitals.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q37",
+            "type": "yes-no-notgiven",
+            "prompt": "37. Algorithmic bias can negatively impact minority populations in healthcare.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q38",
+            "type": "yes-no-notgiven",
+            "prompt": "38. All hospitals currently mandate the use of AI for oncology diagnostics.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q39",
+            "type": "yes-no-notgiven",
+            "prompt": "39. The implementation of AI in healthcare introduces significant ethical hurdles.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          },
+          {
+            "id": "r_q40",
+            "type": "yes-no-notgiven",
+            "prompt": "40. Early-stage malignancy detection improves overall patient prognosis.",
+            "options": [
+              "YES",
+              "NO",
+              "NOT GIVEN"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "writingTask1": {
+    "enabled": true,
+    "durationMinutes": 20,
+    "minWords": 150,
+    "instructions": "You should spend about 20 minutes on this task. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "promptTitle": "Social Media Usage by Age Group (2015–2025)",
+    "promptDesc": "The line graph illustrates the percentage of daily active users across four different age group categories using social media platforms between 2015 and 2025.",
+    "chartType": "line",
+    "labels": [
+      "2015",
+      "2018",
+      "2021",
+      "2025"
+    ],
+    "datasets": [
+      {
+        "label": "16–24 years",
+        "data": [
+          85,
+          90,
+          95,
+          98
+        ],
+        "borderColor": "#3b82f6",
+        "backgroundColor": "#3b82f6"
+      },
+      {
+        "label": "25–44 years",
+        "data": [
+          60,
+          72,
+          80,
+          88
+        ],
+        "borderColor": "#10b981",
+        "backgroundColor": "#10b981"
+      }
+    ]
+  },
+  "writingTask2": {
+    "enabled": true,
+    "durationMinutes": 40,
+    "minWords": 250,
+    "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+    "prompt": "Can artificial intelligence accidentally cause harm without intentionally doing it? What measures should be taken to mitigate these unintended consequences? Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+  }
+}
